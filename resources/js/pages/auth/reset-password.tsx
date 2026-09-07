@@ -60,7 +60,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                                 autoComplete="new-password"
                                 autoFocus
                                 placeholder="Password"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                             />
                             <InputError message={errors.password} />
                         </div>
@@ -78,7 +78,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
                                 name="password_confirmation"
                                 autoComplete="new-password"
                                 placeholder="Confirm password"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                             />
                             <InputError
                                 message={errors.password_confirmation}
@@ -88,7 +88,7 @@ export default function ResetPassword({ token, email }: ResetPasswordProps) {
 
                         <button
                             type="submit"
-                            className="mt-4 w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+                            className="mt-4 w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none disabled:opacity-50"
                             disabled={processing}
                             data-test="reset-password-button"
                         >
