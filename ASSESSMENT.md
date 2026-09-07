@@ -1,65 +1,102 @@
-# Daymakers Assessment January 2026
+# Daymakers Developer Assessment
 
-Het doel van dit assessment is inzicht te krijgen in je backend- en frontend vaardigheden. Perfect design is niet het
-uitgangspunt; we kijken vooral naar de structuur van de applicatie, de consistentie van de code en de keuzes die je
-maakt.
+Met dit assessment willen we inzicht krijgen in je backend- en frontendvaardigheden.
+We kijken naar de structuur van je applicatie, de consistentie van je code en de
+keuzes die je maakt. Een pixel-perfect ontwerp is niet nodig; een logische,
+verzorgde en bruikbare uitwerking wel.
 
-Het gaat er niet om hoeveel je binnen een tijd kunt bouwen, maar hoe je prioriteiten stelt en afwegingen maakt.De stack bestaat uit Laravel voor de backend, Inertia.js en React voor de frontend, en Tailwind en/of (S)CSS voor
-styling.
+Besteed maximaal **8 uur** aan de opdracht. Stel prioriteiten en beschrijf bij de
+oplevering wat je hebt afgerond en wat je met meer tijd zou verbeteren.
 
 ## De opdracht
 
-Bouw een kleine event website waarop een gebruiker een event kan bekijken en zich kan registreren.
+Bouw een kleine eventwebsite waarop een bezoeker een event kan bekijken en zich
+met een e-mailadres kan aanmelden.
+
+Gebruik Laravel voor de backend, Inertia.js en React voor de frontend, en
+Tailwind CSS en/of (S)CSS voor de styling.
+
+## De eventpagina
 
 Een event bevat:
-- titel 
-- subtitel 
-- beschrijving 
-- start- en einddatum 
-- locatie 
-- hero-afbeelding 
 
-De publieke eventpagina is bereikbaar via /events/{slug} en bevat:
-- een hero-sectie met afbeelding, titel en subtitel 
-- event informatie (datum en locatie) 
-- een content sectie met de beschrijving 
-- een call-to-action button 
+- Een titel en subtitel.
+- Een beschrijving.
+- Een start- en einddatum.
+- Een locatie.
+- Een hero-afbeelding.
+- Een unieke slug voor de URL.
 
-De layout moet responsive zijn voor desktop en mobiel, met een duidelijke visuele hiërarchie, consistente spacing en
-typografie. Pixel-perfect design is niet nodig, maar de layout moet logisch en verzorgd zijn.
+De publieke pagina is bereikbaar via `/events/{slug}` en toont deze informatie in
+een overzichtelijke layout. Gebruik een hero-sectie met de afbeelding, titel en
+subtitel, een sectie met praktische informatie en ruimte voor de beschrijving.
+Maak duidelijk hoe de bezoeker zich kan aanmelden.
 
-Voor registratie is het voldoende dat een gebruiker zich kan aanmelden met naam en e-mailadres.
+De pagina moet goed werken op desktop en mobiel. Let op visuele hiërarchie,
+spacing, typografie en leesbaarheid. Een onbekende slug geeft een 404-pagina.
+
+## Aanmelden
+
+Houd de aanmelding klein: **één e-mailveld en een aanmeldknop zijn voldoende**.
+Je mag dit direct op de eventpagina plaatsen. Een uitgebreid formulier, een
+gebruikersaccount of een aparte registratiepagina is niet nodig.
+
+Zorg dat:
+
+- Het e-mailveld verplicht is en server-side wordt gevalideerd.
+- Een ontbrekend of ongeldig e-mailadres een duidelijke foutmelding bij het veld geeft.
+- Een geldige aanmelding wordt opgeslagen bij het juiste event.
+- De bezoeker na een geslaagde aanmelding een duidelijke bevestiging op de pagina ziet.
+- Hetzelfde e-mailadres zich niet meerdere keren voor hetzelfde event kan aanmelden.
+  Toon in dat geval een begrijpelijke melding.
+
+Geef het veld een zichtbaar label en zorg dat aanmelden ook met het toetsenbord
+werkt. Je hoeft geen bevestigingsmail te versturen.
 
 ## Technische verwachtingen
-- Frontend: een duidelijke componentstructuur in React, waarbij data via Inertia wordt doorgegeven 
-- Backend: een netjes opgezet datamodel met migrations, validatie, slug-generatie en image handling 
 
-Vanwege de tijd is het niet nodig een CMS te bouwen. Data mag bijvoorbeeld via SQL seed/inserts worden toegevoegd.
+- Gebruik migrations voor het datamodel en leg de relatie tussen events en
+  aanmeldingen vast.
+- Genereer de slug op basis van de eventtitel en houd rekening met unieke URL's.
+- Geef eventdata vanuit Laravel via Inertia door aan React.
+- Kies een duidelijke componentstructuur en houd je code leesbaar en consistent.
+- Voeg enkele gerichte tests toe, bijvoorbeeld voor een geldige aanmelding,
+  ongeldige invoer of een onbekende eventslug.
+
+Lever minimaal één voorbeeld-event mee, bij voorkeur via een seeder. Voor de
+hero-afbeelding volstaat een lokaal bestand of een afbeeldings-URL die je bij het
+event opslaat. Een uploadfunctie, CMS of beheeromgeving is niet nodig.
+
+Een eventoverzicht, betalingen, ticketing en capaciteitsbeheer vallen buiten de
+opdracht. Voor overige details mag je zelf een redelijke keuze maken; licht die
+kort toe in je README.
 
 ## Oplevering
 
-De oplevering bestaat uit:
-- een werkende applicatie 
-- een korte README waarin je:  
-  - de applicatie en werking beschrijft 
-  - je gemaakte keuzes toelicht (met name frontend en CSS) 
-  - aangeeft wat je met meer tijd zou verbeteren of uitbreiden 
+Lever je code op met een korte README waarin je beschrijft:
+
+- Welke keuzes je hebt gemaakt, met name voor het datamodel en de frontend.
+- Wat eventueel nog niet af is en wat je met meer tijd zou verbeteren.
 
 ## Beoordeling
 
 We beoordelen op:
-- codekwaliteit en het volgen van gangbare conventies 
-- frontend opzet en componentstructuur 
-- CSS en stylingkeuzes 
-- leesbaarheid van de code 
-- reflectie op gemaakte keuzes 
 
-Het is niet erg als niet alles perfect werkt of volledig is uitgewerkt. Het doel is een goed beeld te krijgen van hoe je
-codeert en hoe je tot beslissingen komt. Houd je strikt aan de maximale tijd van 8 uur.
+- De werking van de eventpagina en de aanmelding.
+- De structuur van de backend, het datamodel en de validatie.
+- De opzet van de React-componenten en de gegevensoverdracht via Inertia.
+- Responsive styling, toegankelijkheid en feedback aan de bezoeker.
+- Leesbaarheid, consistentie en gerichte tests.
+- Je prioriteiten en de onderbouwing van je keuzes.
+
+Het is niet erg als niet alles volledig is uitgewerkt. Stop na maximaal 8 uur en
+geef in bijbehorende documentatie aan waar je staat. Je afwegingen zijn onderdeel van de beoordeling.
 
 ## Startpunt
 
-Om je op weg te helpen is deze voorbeeld repository beschikbaar met de basisstructuur van Laravel 12, Inertia en React.
-Hier kan je een fork van maken:
+Maak een fork van de voorbeeldrepository met Laravel 13, Inertia en React:
 
-https://github.com/FX-Agency/assesment-daymakers 
+[Daymakers assessment repository](https://github.com/FX-Agency/assesment-daymakers)
+
+Volg de installatie-instructies in `README.md`. De aanwezige accountfunctionaliteit
+is geen vereiste voor de eventaanmelding maar mag je eventueel gebruiken.

@@ -37,7 +37,7 @@ export default function Register() {
                                     autoComplete="name"
                                     name="name"
                                     placeholder="Full name"
-                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                                 />
                                 <InputError
                                     message={errors.name}
@@ -60,7 +60,7 @@ export default function Register() {
                                     autoComplete="email"
                                     name="email"
                                     placeholder="email@example.com"
-                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                                 />
                                 <InputError message={errors.email} />
                             </div>
@@ -80,7 +80,7 @@ export default function Register() {
                                     autoComplete="new-password"
                                     name="password"
                                     placeholder="Password"
-                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                                 />
                                 <InputError message={errors.password} />
                             </div>
@@ -100,7 +100,7 @@ export default function Register() {
                                     autoComplete="new-password"
                                     name="password_confirmation"
                                     placeholder="Confirm password"
-                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                                 />
                                 <InputError
                                     message={errors.password_confirmation}
@@ -109,12 +109,14 @@ export default function Register() {
 
                             <button
                                 type="submit"
-                                className="mt-2 w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+                                className="mt-2 w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none disabled:opacity-50"
                                 tabIndex={5}
                                 disabled={processing}
                                 data-test="register-user-button"
                             >
-                                {processing ? 'Creating account...' : 'Create account'}
+                                {processing
+                                    ? 'Creating account...'
+                                    : 'Create account'}
                             </button>
                         </div>
 

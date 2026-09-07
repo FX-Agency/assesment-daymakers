@@ -37,7 +37,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
                                     autoComplete="off"
                                     autoFocus
                                     placeholder="email@example.com"
-                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+                                    className="rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                                 />
 
                                 <InputError message={errors.email} />
@@ -46,7 +46,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
                             <div className="my-6 flex items-center justify-start">
                                 <button
                                     type="submit"
-                                    className="w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+                                    className="w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none disabled:opacity-50"
                                     disabled={processing}
                                     data-test="email-password-reset-link-button"
                                 >

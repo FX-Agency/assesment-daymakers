@@ -1,6 +1,7 @@
 import { wayfinder } from '@laravel/vite-plugin-wayfinder';
 import tailwindcss from '@tailwindcss/vite';
-import react from '@vitejs/plugin-react';
+import react, { reactCompilerPreset } from '@vitejs/plugin-react';
+import babel from '@rolldown/plugin-babel';
 import laravel from 'laravel-vite-plugin';
 import { defineConfig } from 'vite';
 
@@ -11,17 +12,11 @@ export default defineConfig({
             ssr: 'resources/js/ssr.tsx',
             refresh: true,
         }),
-        react({
-            babel: {
-                plugins: ['babel-plugin-react-compiler'],
-            },
-        }),
+        react(),
+        babel({ presets: [reactCompilerPreset()] }),
         tailwindcss(),
         wayfinder({
             formVariants: true,
         }),
     ],
-    esbuild: {
-        jsx: 'automatic',
-    },
 });
